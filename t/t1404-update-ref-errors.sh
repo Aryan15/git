@@ -37,14 +37,9 @@ Q="'"
 # Test adding and deleting D/F-conflicting references in a single
 # transaction.
 df_test() {
-	local prefix="$1"
+	prefix="$1"
+	pack=: symadd=false symdel=false add_del=false addref= delref=
 	shift
-	local pack=:
-	local symadd=false
-	local symdel=false
-	local add_del=false
-	local addref
-	local delref
 	while test $# -gt 0
 	do
 		case "$1" in
